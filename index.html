@@ -1,0 +1,1357 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#173d35">
+    <meta name="description"
+        content="Discover exceptional stays, explore beautiful hotels, and plan your next getaway with Stayora.">
+    <title>Projects | Arslan Weblab</title>
+    <link rel="icon" href="logo.webp">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+
+    <div class="site-loader" id="siteLoader">
+        <img src="logo.webp" alt="My Codelab" class="loader-logo">
+        <div class="loader-line"></div>
+        <p>Preparing your getaway</p>
+    </div>
+
+    <div class="announcement-bar">
+        <p>Discover your next escape. Make every stay memorable.</p>
+        <a href="#featured">Explore stays <i data-lucide="arrow-up-right"></i></a>
+    </div>
+
+    <header class="site-header" id="siteHeader">
+        <nav class="navbar container">
+            <a href="#home" class="brand" aria-label="Stayora home">
+                <span class="brand-icon"><i data-lucide="palmtree"></i></span>
+                <span>stayora<span class="brand-dot">.</span></span>
+            </a>
+
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Open navigation" aria-expanded="false">
+                <i data-lucide="menu"></i>
+            </button>
+
+            <div class="nav-links" id="navLinks">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#featured" class="nav-link">Discover</a>
+                <a href="#experiences" class="nav-link">Experiences</a>
+                <a href="#offers" class="nav-link">Offers</a>
+                <a href="#about" class="nav-link">About</a>
+            </div>
+
+            <div class="nav-actions">
+                <button class="icon-button favorites-nav" id="favoritesNav" aria-label="View favorites">
+                    <i data-lucide="heart"></i>
+                    <span class="favorites-count" id="favoritesCount">0</span>
+                </button>
+                <a href="#booking" class="btn btn-primary nav-book-btn">Find a stay <i
+                        data-lucide="arrow-up-right"></i></a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="hero-section" id="home">
+            <div class="hero-background"></div>
+            <div class="container hero-content">
+                <div class="hero-copy">
+                    <span class="eyebrow hero-eyebrow"><span class="eyebrow-line"></span> YOUR JOURNEY STARTS
+                        HERE</span>
+                    <h1>Find your place<br>in the <em>world.</em></h1>
+                    <p>Thoughtfully chosen stays, unforgettable destinations, and the little moments that make every
+                        journey special.</p>
+                    <div class="hero-actions">
+                        <a href="#booking" class="btn btn-light">Find your stay <i data-lucide="arrow-up-right"></i></a>
+                        <a href="#featured" class="hero-text-link">Explore destinations <i
+                                data-lucide="arrow-down-right"></i></a>
+                    </div>
+                    <div class="hero-social-proof">
+                        <div class="avatar-stack">
+                            <img src="https://i.pravatar.cc/80?img=47" alt="Traveler">
+                            <img src="https://i.pravatar.cc/80?img=12" alt="Traveler">
+                            <img src="https://i.pravatar.cc/80?img=32" alt="Traveler">
+                            <span class="avatar-extra">+</span>
+                        </div>
+                        <div>
+                            <strong>Made for memorable stays</strong>
+                            <p>Explore places worth discovering</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero-side-note">
+                    <i data-lucide="map-pin"></i>
+                    <span>Extraordinary places.<br>Meaningful experiences.</span>
+                </div>
+            </div>
+
+            <div class="hero-bottom container">
+                <span>01 — FIND YOUR ESCAPE</span>
+                <span>STAYS THAT FEEL DIFFERENT</span>
+                <a href="#booking" aria-label="Scroll to booking search"><i data-lucide="arrow-down"></i></a>
+            </div>
+        </section>
+
+        <section class="booking-section container" id="booking">
+            <div class="booking-heading">
+                <div>
+                    <span class="eyebrow">PLAN YOUR GETAWAY</span>
+                    <h2>Your next stay, <em>made simple.</em></h2>
+                </div>
+                <p>Tell us what you're looking for.</p>
+            </div>
+
+            <form class="booking-search" id="bookingSearch">
+                <label class="booking-field">
+                    <span class="field-icon"><i data-lucide="map-pin"></i></span>
+                    <span class="field-content">
+                        <span class="field-label">Destination</span>
+                        <input type="text" id="destinationInput" name="destination" placeholder="Where are you going?"
+                            required>
+                    </span>
+                </label>
+
+                <label class="booking-field">
+                    <span class="field-icon"><i data-lucide="calendar-days"></i></span>
+                    <span class="field-content">
+                        <span class="field-label">Check-in</span>
+                        <input type="date" id="checkinInput" name="checkin" required>
+                    </span>
+                </label>
+
+                <label class="booking-field">
+                    <span class="field-icon"><i data-lucide="calendar-check"></i></span>
+                    <span class="field-content">
+                        <span class="field-label">Check-out</span>
+                        <input type="date" id="checkoutInput" name="checkout" required>
+                    </span>
+                </label>
+
+                <label class="booking-field">
+                    <span class="field-icon"><i data-lucide="users"></i></span>
+                    <span class="field-content">
+                        <span class="field-label">Guests</span>
+                        <select id="guestsInput" name="guests">
+                            <option value="1">1 Guest</option>
+                            <option value="2" selected>2 Guests</option>
+                            <option value="3">3 Guests</option>
+                            <option value="4">4 Guests</option>
+                            <option value="5">5 Guests</option>
+                            <option value="6">6 Guests</option>
+                        </select>
+                    </span>
+                </label>
+
+                <button class="btn btn-primary booking-submit" type="submit">
+                    <i data-lucide="search"></i> Search
+                </button>
+            </form>
+
+            <p class="booking-feedback" id="bookingFeedback" role="status"></p>
+        </section>
+
+        <section class="section-block container" id="featured">
+            <div class="section-heading">
+                <div>
+                    <span class="eyebrow">HANDPICKED FOR YOU</span>
+                    <h2>Stays worth <em>staying for.</em></h2>
+                    <p>A first look at places that turn a simple trip into a story.</p>
+                </div>
+                <button class="btn btn-outline section-toggle" id="openAllStays" aria-expanded="false"
+                    aria-controls="allStaysModal">
+                    View all stays <i data-lucide="arrow-up-right"></i>
+                </button>
+            </div>
+
+            <div class="preview-grid" id="featuredPreview">
+                <article class="hotel-card">
+                    <div class="hotel-image-wrap">
+                        <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=900&q=85"
+                            alt="Luxury resort with swimming pool" loading="lazy">
+                        <span class="hotel-tag">Guest favorite</span>
+                        <button class="favorite-btn" data-favorite="hotel-1"
+                            aria-label="Add Ocean Pearl Resort to favorites"><i data-lucide="heart"></i></button>
+                    </div>
+                    <div class="hotel-card-content">
+                        <div class="hotel-location"><i data-lucide="map-pin"></i> Maldives</div>
+                        <h3>Ocean Pearl Resort</h3>
+                        <div class="hotel-meta"><span><i data-lucide="star"></i> 4.9</span><span>Beachfront
+                                escape</span></div>
+                        <div class="hotel-price"><strong>$245</strong><span>/ night</span></div>
+                    </div>
+                </article>
+
+                <article class="hotel-card">
+                    <div class="hotel-image-wrap">
+                        <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=900&q=85"
+                            alt="Elegant luxury hotel surrounded by greenery" loading="lazy">
+                        <span class="hotel-tag">Boutique pick</span>
+                        <button class="favorite-btn" data-favorite="hotel-2"
+                            aria-label="Add The Verdant House to favorites"><i data-lucide="heart"></i></button>
+                    </div>
+                    <div class="hotel-card-content">
+                        <div class="hotel-location"><i data-lucide="map-pin"></i> Bali, Indonesia</div>
+                        <h3>The Verdant House</h3>
+                        <div class="hotel-meta"><span><i data-lucide="star"></i> 4.8</span><span>Nature retreat</span>
+                        </div>
+                        <div class="hotel-price"><strong>$168</strong><span>/ night</span></div>
+                    </div>
+                </article>
+
+                <article class="hotel-card">
+                    <div class="hotel-image-wrap">
+                        <img src="https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=900&q=85"
+                            alt="Architectural city hotel" loading="lazy">
+                        <span class="hotel-tag">City escape</span>
+                        <button class="favorite-btn" data-favorite="hotel-3"
+                            aria-label="Add Maison Lumiere to favorites"><i data-lucide="heart"></i></button>
+                    </div>
+                    <div class="hotel-card-content">
+                        <div class="hotel-location"><i data-lucide="map-pin"></i> Paris, France</div>
+                        <h3>Maison Lumiere</h3>
+                        <div class="hotel-meta"><span><i data-lucide="star"></i> 4.7</span><span>Urban boutique</span>
+                        </div>
+                        <div class="hotel-price"><strong>$195</strong><span>/ night</span></div>
+                    </div>
+                </article>
+            </div>
+
+            <div class="expandable-section" id="featuredFull" hidden>
+                <div class="expanded-heading">
+                    <div>
+                        <span class="eyebrow">THE FULL COLLECTION</span>
+                        <h3>Find your kind of getaway</h3>
+                    </div>
+                    <button class="icon-button collapse-section" data-collapse="featuredFull"
+                        aria-label="Collapse hotel collection"><i data-lucide="x"></i></button>
+                </div>
+
+                <div class="hotel-toolbar">
+                    <label class="filter-search"><i data-lucide="search"></i><input type="search" id="hotelFilterInput"
+                            placeholder="Search hotels or destinations"></label>
+                    <select id="hotelSort" aria-label="Sort hotels">
+                        <option value="recommended">Recommended</option>
+                        <option value="price-low">Price: low to high</option>
+                        <option value="price-high">Price: high to low</option>
+                        <option value="rating">Highest rated</option>
+                    </select>
+                    <select id="hotelTypeFilter" aria-label="Filter by hotel type">
+                        <option value="all">All stays</option>
+                        <option value="resort">Resorts</option>
+                        <option value="boutique">Boutique hotels</option>
+                        <option value="city">City hotels</option>
+                    </select>
+                </div>
+
+                <div class="hotel-results-grid" id="hotelResultsGrid"></div>
+                <p class="empty-state" id="hotelEmptyState" hidden>No stays match your search. Try another destination
+                    or filter.</p>
+                <button class="btn btn-outline collapse-bottom" data-collapse="featuredFull">Show less <i
+                        data-lucide="arrow-up"></i></button>
+            </div>
+        </section>
+
+        <section class="section-block destinations-section container" id="destinations">
+            <div class="section-heading">
+                <div>
+                    <span class="eyebrow">THE WORLD IS WAITING</span>
+                    <h2>Where will you <em>wake up?</em></h2>
+                    <p>A little inspiration for your next great escape.</p>
+                </div>
+                <button class="btn btn-outline section-toggle" id="openDestinations" aria-expanded="false"
+                    aria-controls="destinationsModal">
+                    Explore destinations <i data-lucide="arrow-up-right"></i>
+                </button>
+            </div>
+
+            <div class="destination-preview-grid">
+                <button class="destination-card" data-destination="Bali">
+                    <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=900&q=85"
+                        alt="Tropical Bali landscape" loading="lazy">
+                    <span class="destination-overlay">
+                        <span>INDONESIA</span>
+                        <strong>Bali</strong>
+                        <span class="destination-explore">Explore stays <i data-lucide="arrow-up-right"></i></span>
+                    </span>
+                </button>
+                <button class="destination-card" data-destination="Switzerland">
+                    <img src="https://images.unsplash.com/photo-1531366936337-7c912a4589a7?auto=format&fit=crop&w=900&q=85"
+                        alt="Swiss mountain scenery" loading="lazy">
+                    <span class="destination-overlay">
+                        <span>SWITZERLAND</span>
+                        <strong>The Alps</strong>
+                        <span class="destination-explore">Explore stays <i data-lucide="arrow-up-right"></i></span>
+                    </span>
+                </button>
+                <button class="destination-card" data-destination="Maldives">
+                    <img src="https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&w=900&q=85"
+                        alt="Maldives tropical island" loading="lazy">
+                    <span class="destination-overlay">
+                        <span>INDIAN OCEAN</span>
+                        <strong>Maldives</strong>
+                        <span class="destination-explore">Explore stays <i data-lucide="arrow-up-right"></i></span>
+                    </span>
+                </button>
+            </div>
+
+            <div class="expandable-section" id="destinationsFull" hidden>
+                <div class="expanded-heading">
+                    <div>
+                        <span class="eyebrow">YOUR NEXT ADVENTURE</span>
+                        <h3>Choose your destination</h3>
+                    </div>
+                    <button class="icon-button collapse-section" data-collapse="destinationsFull"
+                        aria-label="Collapse destinations"><i data-lucide="x"></i></button>
+                </div>
+
+                <div class="destination-list-grid">
+                    <button class="destination-list-card" data-destination="Paris">
+                        <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=600&q=80"
+                            alt="Paris cityscape" loading="lazy">
+                        <span><strong>Paris</strong><small>France · City breaks</small></span>
+                        <i data-lucide="arrow-up-right"></i>
+                    </button>
+                    <button class="destination-list-card" data-destination="Dubai">
+                        <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=600&q=80"
+                            alt="Dubai skyline" loading="lazy">
+                        <span><strong>Dubai</strong><small>UAE · Modern luxury</small></span>
+                        <i data-lucide="arrow-up-right"></i>
+                    </button>
+                    <button class="destination-list-card" data-destination="London">
+                        <img src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=600&q=80"
+                            alt="London cityscape" loading="lazy">
+                        <span><strong>London</strong><small>United Kingdom · Culture</small></span>
+                        <i data-lucide="arrow-up-right"></i>
+                    </button>
+                    <button class="destination-list-card" data-destination="Istanbul">
+                        <img src="https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?auto=format&fit=crop&w=600&q=80"
+                            alt="Istanbul architecture" loading="lazy">
+                        <span><strong>Istanbul</strong><small>Türkiye · History</small></span>
+                        <i data-lucide="arrow-up-right"></i>
+                    </button>
+                    <button class="destination-list-card" data-destination="Switzerland">
+                        <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=600&q=80"
+                            alt="Mountain landscape" loading="lazy">
+                        <span><strong>Swiss Alps</strong><small>Switzerland · Nature</small></span>
+                        <i data-lucide="arrow-up-right"></i>
+                    </button>
+                    <button class="destination-list-card" data-destination="Maldives">
+                        <img src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=600&q=80"
+                            alt="Ocean and tropical beach" loading="lazy">
+                        <span><strong>Maldives</strong><small>Indian Ocean · Beach</small></span>
+                        <i data-lucide="arrow-up-right"></i>
+                    </button>
+                </div>
+
+                <button class="btn btn-outline collapse-bottom" data-collapse="destinationsFull">Show less <i
+                        data-lucide="arrow-up"></i></button>
+            </div>
+        </section>
+
+        <section class="experiences-section section-block" id="experiences">
+            <div class="container">
+                <div class="section-heading">
+                    <div>
+                        <span class="eyebrow">TRAVEL YOUR WAY</span>
+                        <h2>Stay for the <em>feeling.</em></h2>
+                        <p>Different trips call for different places. Find the stay that suits you.</p>
+                    </div>
+                    <button class="btn btn-outline section-toggle" id="openExperiences" aria-expanded="false"
+                        aria-controls="experiencesModal">
+                        All experiences <i data-lucide="arrow-up-right"></i>
+                    </button>
+                </div>
+
+                <div class="experience-preview-grid">
+                    <article class="experience-card">
+                        <div class="experience-icon"><i data-lucide="waves"></i></div>
+                        <span>01 / UNWIND</span>
+                        <h3>Beach escapes</h3>
+                        <p>Slow mornings, ocean views and time to breathe.</p>
+
+                    </article>
+                    <article class="experience-card">
+                        <div class="experience-icon"><i data-lucide="mountain"></i></div>
+                        <span>02 / EXPLORE</span>
+                        <h3>Nature retreats</h3>
+                        <p>Mountain air, green landscapes and quieter days.</p>
+
+                    </article>
+                    <article class="experience-card">
+                        <div class="experience-icon"><i data-lucide="building-2"></i></div>
+                        <span>03 / DISCOVER</span>
+                        <h3>City hideaways</h3>
+                        <p>Stay close to the culture, cuisine and energy.</p>
+
+                    </article>
+                </div>
+
+                <div class="expandable-section" id="experiencesFull" hidden>
+                    <div class="expanded-heading">
+                        <div>
+                            <span class="eyebrow">EXPLORE YOUR STYLE</span>
+                            <h3>What does your perfect trip look like?</h3>
+                        </div>
+                        <button class="icon-button collapse-section" data-collapse="experiencesFull"
+                            aria-label="Collapse experiences"><i data-lucide="x"></i></button>
+                    </div>
+
+                    <div class="experience-full-grid">
+                        <article class="experience-full-card">
+                            <img src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=800&q=85"
+                                alt="Relaxing ocean getaway" loading="lazy">
+                            <div><span>RELAX & RECHARGE</span>
+                                <h3>Beach escapes</h3>
+                                <p>Find seaside resorts, coastal hideaways and peaceful island stays.</p><button
+                                    class="btn btn-outline experience-detail-btn"
+                                    data-experience="Beach escapes">Explore this style</button>
+                            </div>
+                        </article>
+                        <article class="experience-full-card">
+                            <img src="https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=800&q=85"
+                                alt="Green mountain landscape" loading="lazy">
+                            <div><span>OUTDOOR ADVENTURES</span>
+                                <h3>Nature retreats</h3>
+                                <p>Discover cabins, mountain lodges and stays surrounded by nature.</p><button
+                                    class="btn btn-outline experience-detail-btn"
+                                    data-experience="Nature retreats">Explore this style</button>
+                            </div>
+                        </article>
+                        <article class="experience-full-card">
+                            <img src="https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=800&q=85"
+                                alt="Contemporary city architecture" loading="lazy">
+                            <div><span>CULTURE & CUISINE</span>
+                                <h3>City hideaways</h3>
+                                <p>Explore boutique hotels near restaurants, landmarks and city life.</p><button
+                                    class="btn btn-outline experience-detail-btn"
+                                    data-experience="City hideaways">Explore this style</button>
+                            </div>
+                        </article>
+                        <article class="experience-full-card">
+                            <img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=800&q=85"
+                                alt="Comfortable hotel bedroom" loading="lazy">
+                            <div><span>TIME TOGETHER</span>
+                                <h3>Romantic stays</h3>
+                                <p>Choose intimate hotels and special settings for a memorable getaway.</p><button
+                                    class="btn btn-outline experience-detail-btn"
+                                    data-experience="Romantic stays">Explore this style</button>
+                            </div>
+                        </article>
+                    </div>
+
+                    <button class="btn btn-outline collapse-bottom" data-collapse="experiencesFull">Show less <i
+                            data-lucide="arrow-up"></i></button>
+                </div>
+            </div>
+        </section>
+
+        <section class="offers-section section-block container" id="offers">
+            <div class="offer-banner">
+                <div class="offer-content">
+                    <span class="eyebrow">A LITTLE SOMETHING EXTRA</span>
+                    <h2>Make room for<br><em>something wonderful.</em></h2>
+                    <p>Explore handpicked stay ideas and sample getaway packages for your next adventure.</p>
+                    <button class="btn btn-light section-toggle" id="openOffers" aria-expanded="false"
+                        aria-controls="offersModal">
+                        Explore offers <i data-lucide="arrow-up-right"></i>
+                    </button>
+                </div>
+                <div class="offer-image">
+                    <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=1100&q=85"
+                        alt="Resort swimming pool and tropical surroundings" loading="lazy">
+                    <div class="offer-stamp"><i data-lucide="sparkles"></i><span>YOUR NEXT<br>GREAT ESCAPE</span></div>
+                </div>
+            </div>
+
+            <div class="expandable-section" id="offersFull" hidden>
+                <div class="expanded-heading">
+                    <div><span class="eyebrow">STAY INSPIRED</span>
+                        <h3>Explore getaway ideas</h3>
+                    </div>
+                    <button class="icon-button collapse-section" data-collapse="offersFull"
+                        aria-label="Collapse offers"><i data-lucide="x"></i></button>
+                </div>
+
+                <div class="offers-grid">
+                    <article class="offer-card">
+                        <div class="offer-card-icon"><i data-lucide="sunrise"></i></div>
+                        <span>FOR A CHANGE OF SCENERY</span>
+                        <h3>The weekend reset</h3>
+                        <p>Build a short escape around a new city, a beautiful room and a slower schedule.</p>
+                        <button class="text-button offer-detail-btn" data-offer="The weekend reset">Plan a getaway <i
+                                data-lucide="arrow-up-right"></i></button>
+                    </article>
+                    <article class="offer-card">
+                        <div class="offer-card-icon"><i data-lucide="heart"></i></div>
+                        <span>FOR SPECIAL MOMENTS</span>
+                        <h3>A stay to remember</h3>
+                        <p>Explore boutique stays and memorable settings for your next celebration.</p>
+                        <button class="text-button offer-detail-btn" data-offer="A stay to remember">Find your stay <i
+                                data-lucide="arrow-up-right"></i></button>
+                    </article>
+                    <article class="offer-card">
+                        <div class="offer-card-icon"><i data-lucide="compass"></i></div>
+                        <span>FOR THE CURIOUS</span>
+                        <h3>Somewhere new</h3>
+                        <p>Discover a destination you have never visited and start planning your next story.</p>
+                        <button class="text-button offer-detail-btn" data-offer="Somewhere new">Get inspired <i
+                                data-lucide="arrow-up-right"></i></button>
+                    </article>
+                </div>
+
+                <p class="offer-disclaimer">These are sample promotional concepts for this frontend demo, not verified
+                    discounts or live hotel packages.</p>
+                <button class="btn btn-outline collapse-bottom" data-collapse="offersFull">Show less <i
+                        data-lucide="arrow-up"></i></button>
+            </div>
+        </section>
+
+        <section class="section-block about-section container" id="about">
+            <div class="about-image">
+                <img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=1000&q=85"
+                    alt="Beautifully prepared hotel room" loading="lazy">
+                <div class="about-image-note">
+                    <i data-lucide="leaf"></i>
+                    <span>Travel thoughtfully.<br>Stay meaningfully.</span>
+                </div>
+            </div>
+
+            <div class="about-content">
+                <span class="eyebrow">A DIFFERENT WAY TO GET AWAY</span>
+                <h2>It's not just where you stay.<br>It's how it <em>makes you feel.</em></h2>
+                <p>At Stayora, we believe a great journey begins with finding a place that feels right. From peaceful
+                    retreats to vibrant city hideaways, our goal is to make exploring your options feel simple and
+                    inspiring.</p>
+                <p>This demonstration brings hotel discovery, trip planning and booking interactions together in one
+                    easy-to-explore experience.</p>
+
+                <div class="about-points">
+                    <div><i data-lucide="check-circle-2"></i><span>Stay inspiration for every kind of traveler</span>
+                    </div>
+                    <div><i data-lucide="check-circle-2"></i><span>A simple, intuitive discovery experience</span></div>
+                    <div><i data-lucide="check-circle-2"></i><span>Thoughtful details from search to selection</span>
+                    </div>
+                </div>
+
+                <button class="btn btn-outline section-toggle" id="openStory" aria-expanded="false"
+                    aria-controls="storyModal">
+                    Our Story <i data-lucide="arrow-up-right"></i>
+                </button>
+            </div>
+
+        </section>
+
+        <section class="amenities-section section-block" id="amenities">
+            <div class="container">
+                <div class="section-heading">
+                    <div>
+                        <span class="eyebrow">THE DETAILS MATTER</span>
+                        <h2>Little comforts. <em>Better stays.</em></h2>
+                        <p>Explore the amenities that can make a hotel feel like the right choice.</p>
+                    </div>
+
+                </div>
+
+                <div class="amenities-preview-grid">
+                    <article class="amenity-card"><i data-lucide="wifi"></i>
+                        <h3>Free Wi-Fi</h3>
+                        <p>Stay connected on your trip.</p>
+                    </article>
+                    <article class="amenity-card"><i data-lucide="coffee"></i>
+                        <h3>Breakfast</h3>
+                        <p>Start the day at your own pace.</p>
+                    </article>
+                    <article class="amenity-card"><i data-lucide="waves"></i>
+                        <h3>Swimming pool</h3>
+                        <p>Make time to relax and recharge.</p>
+                    </article>
+                    <article class="amenity-card"><i data-lucide="car"></i>
+                        <h3>Parking</h3>
+                        <p>Useful options for road trips.</p>
+                    </article>
+                </div>
+
+                <div class="expandable-section" id="amenitiesFull" hidden>
+                    <div class="expanded-heading">
+                        <div><span class="eyebrow">COMFORT CHECKLIST</span>
+                            <h3>What matters most to you?</h3>
+                        </div>
+                        <button class="icon-button collapse-section" data-collapse="amenitiesFull"
+                            aria-label="Collapse amenities"><i data-lucide="x"></i></button>
+                    </div>
+
+                    <div class="amenities-full-grid">
+                        <div><i data-lucide="wifi"></i><span><strong>Wi-Fi</strong><small>For work, planning and staying
+                                    connected</small></span></div>
+                        <div><i data-lucide="coffee"></i><span><strong>Breakfast</strong><small>A convenient start to
+                                    the morning</small></span></div>
+                        <div><i data-lucide="waves"></i><span><strong>Swimming pool</strong><small>Relaxation and
+                                    recreation</small></span></div>
+                        <div><i data-lucide="car"></i><span><strong>Parking</strong><small>Convenience for guests
+                                    arriving by car</small></span></div>
+                        <div><i data-lucide="utensils"></i><span><strong>Restaurant</strong><small>Dining options during
+                                    your stay</small></span></div>
+                        <div><i data-lucide="dumbbell"></i><span><strong>Fitness center</strong><small>Space to maintain
+                                    your routine</small></span></div>
+                        <div><i data-lucide="snowflake"></i><span><strong>Air conditioning</strong><small>Comfort in
+                                    different climates</small></span></div>
+                        <div><i data-lucide="clock"></i><span><strong>Flexible arrival</strong><small>Check-in
+                                    information to review before booking</small></span></div>
+                    </div>
+
+                    <p class="demo-note">Amenities shown are examples only. Actual amenities vary by property and must
+                        be confirmed with the hotel.</p>
+                    <button class="btn btn-outline collapse-bottom" data-collapse="amenitiesFull">Show less <i
+                            data-lucide="arrow-up"></i></button>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-block testimonials-section container" id="testimonials">
+            <div class="section-heading">
+                <div>
+                    <span class="eyebrow">TRAVELER NOTES</span>
+                    <h2>Good stays leave <em>good stories.</em></h2>
+                    <p>Example feedback cards showing how traveler reviews could appear.</p>
+                </div>
+                <button class="btn btn-outline section-toggle" id="openTestimonials" aria-expanded="false"
+                    aria-controls="testimonialsModal">
+                    Read more <i data-lucide="arrow-up-right"></i>
+                </button>
+
+            </div>
+
+            <div class="testimonial-preview-grid">
+                <article class="testimonial-card">
+                    <div class="testimonial-stars" aria-label="5 out of 5 stars">★★★★★</div>
+                    <blockquote>“The search experience made it easy to explore different types of stays and imagine the
+                        trip ahead.”</blockquote>
+                    <div class="testimonial-author"><img src="https://i.pravatar.cc/100?img=47" alt=""
+                            loading="lazy"><span><strong>Olivia M.</strong><small>Leisure traveler · Sample
+                                review</small></span></div>
+                </article>
+                <article class="testimonial-card">
+                    <div class="testimonial-stars" aria-label="5 out of 5 stars">★★★★★</div>
+                    <blockquote>“I like having the destination, dates and guest options together in one clear booking
+                        interface.”</blockquote>
+                    <div class="testimonial-author"><img src="https://i.pravatar.cc/100?img=12" alt=""
+                            loading="lazy"><span><strong>Daniel R.</strong><small>Weekend traveler · Sample
+                                review</small></span></div>
+                </article>
+                <article class="testimonial-card">
+                    <div class="testimonial-stars" aria-label="5 out of 5 stars">★★★★★</div>
+                    <blockquote>“The destination ideas make planning a new adventure feel much more approachable.”
+                    </blockquote>
+                    <div class="testimonial-author"><img src="https://i.pravatar.cc/100?img=32" alt=""
+                            loading="lazy"><span><strong>Sophia K.</strong><small>Travel enthusiast · Sample
+                                review</small></span></div>
+                </article>
+            </div>
+
+            <div class="expandable-section" id="testimonialsFull" hidden>
+                <div class="expanded-heading">
+                    <div><span class="eyebrow">MORE TRAVEL INSPIRATION</span>
+                        <h3>Every journey is different.</h3>
+                    </div>
+                    <button class="icon-button collapse-section" data-collapse="testimonialsFull"
+                        aria-label="Collapse reviews"><i data-lucide="x"></i></button>
+                </div>
+                <div class="testimonial-extra-grid">
+                    <article class="testimonial-card">
+                        <div class="testimonial-stars">★★★★★</div>
+                        <blockquote>“A useful layout for comparing example stays before deciding where to explore next.”
+                        </blockquote><span class="sample-review-label">Illustrative review</span>
+                    </article>
+                    <article class="testimonial-card">
+                        <div class="testimonial-stars">★★★★★</div>
+                        <blockquote>“The hotel details and amenities help me think about what matters for a trip.”
+                        </blockquote><span class="sample-review-label">Illustrative review</span>
+                    </article>
+                </div>
+                <p class="demo-note">All testimonials on this demo site are fictional examples, not verified customer
+                    reviews.</p>
+                <button class="btn btn-outline collapse-bottom" data-collapse="testimonialsFull">Show less <i
+                        data-lucide="arrow-up"></i></button>
+            </div>
+        </section>
+
+        <section class="faq-section section-block container" id="faq">
+            <div class="faq-intro">
+                <span class="eyebrow">GOOD TO KNOW</span>
+                <h2>A few things<br>you might <em>wonder.</em></h2>
+                <p>Answers to common questions about this hotel booking demo.</p>
+                <button class="btn btn-outline section-toggle" id="openAllFaqs" aria-expanded="false"
+                    aria-controls="allFaqsModal">
+                    All questions <i data-lucide="arrow-up-right"></i>
+                </button>
+            </div>
+
+            <div class="faq-list" id="faqPreview">
+                <details class="faq-item">
+                    <summary>Can I book a hotel directly here?<i data-lucide="plus"></i></summary>
+                    <p>This is a frontend demonstration. You can try the booking interface, but it does not make real
+                        reservations.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>Are the displayed prices real?<i data-lucide="plus"></i></summary>
+                    <p>No. Hotel prices and property information are illustrative sample data and are not live offers.
+                    </p>
+                </details>
+                <details class="faq-item">
+                    <summary>Can I change my travel dates?<i data-lucide="plus"></i></summary>
+                    <p>Yes. You can choose dates in the search form. The demo will validate the dates entered.</p>
+                </details>
+            </div>
+
+            <div class="expandable-section" id="faqFull" hidden>
+                <div class="expanded-heading">
+                    <div><span class="eyebrow">HELP CENTER</span>
+                        <h3>More answers</h3>
+                    </div>
+                    <button class="icon-button collapse-section" data-collapse="faqFull"
+                        aria-label="Collapse questions"><i data-lucide="x"></i></button>
+                </div>
+
+                <div class="faq-list">
+                    <details class="faq-item">
+                        <summary>Can I search by destination?<i data-lucide="plus"></i></summary>
+                        <p>Yes. Enter a destination in the search form or use the destination cards to prefill the
+                            search.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary>How do favorites work?<i data-lucide="plus"></i></summary>
+                        <p>Use the heart icon on a hotel card to add or remove a stay from your favorites list.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary>Does the website accept payments?<i data-lucide="plus"></i></summary>
+                        <p>No. Payment processing is not included. A real service would require secure payment
+                            integration and a backend.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary>Can I cancel a confirmed booking?<i data-lucide="plus"></i></summary>
+                        <p>The confirmation shown here is only a local demo interaction. There is no actual reservation
+                            to cancel.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary>Where do the hotel photos come from?<i data-lucide="plus"></i></summary>
+                        <p>The page uses externally hosted demonstration photography. An internet connection is required
+                            to load these images.</p>
+                    </details>
+                </div>
+
+                <button class="btn btn-outline collapse-bottom" data-collapse="faqFull">Show less <i
+                        data-lucide="arrow-up"></i></button>
+            </div>
+        </section>
+
+        <section class="final-cta-section container" id="contact">
+            <div class="final-cta-content">
+                <span class="eyebrow">YOUR NEXT CHAPTER AWAITS</span>
+                <h2>Somewhere out there<br>is your <em>next favorite place.</em></h2>
+                <p>Start with a destination, choose your dates, and explore the possibilities.</p>
+                <a href="#booking" class="btn btn-light">Start exploring <i data-lucide="arrow-up-right"></i></a>
+            </div>
+            <div class="final-cta-decoration"><i data-lucide="compass"></i></div>
+        </section>
+
+        <section class="favorites-panel container" id="favoritesPanel" hidden>
+            <div class="expanded-heading">
+                <div><span class="eyebrow">YOUR SAVED STAYS</span>
+                    <h3>Places on your list</h3>
+                </div>
+                <button class="icon-button" id="closeFavorites" aria-label="Close favorites"><i
+                        data-lucide="x"></i></button>
+            </div>
+            <div id="favoritesList" class="favorites-list"></div>
+            <p id="favoritesEmpty" class="empty-state">You haven't saved any stays yet. Tap a heart on a hotel card to
+                add one.</p>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-main">
+                <div class="footer-brand-column">
+                    <a href="#home" class="brand footer-brand">
+                        <span class="brand-icon"><i data-lucide="palmtree"></i></span>
+                        <span>stayora<span class="brand-dot">.</span></span>
+                    </a>
+                    <p>Find your place in the world. Explore destinations, discover beautiful stays and plan your next
+                        escape.</p>
+                    <div class="footer-socials">
+                        <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"
+                            aria-label="Instagram"><i data-lucide="instagram"></i></a>
+                        <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"
+                            aria-label="Facebook"><i data-lucide="facebook"></i></a>
+                        <a href="https://www.pinterest.com/" target="_blank" rel="noopener noreferrer"
+                            aria-label="Pinterest"><i data-lucide="image"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-links-column">
+                    <h3>Explore</h3>
+                    <a href="#featured">Featured stays</a>
+                    <a href="#destinations">Destinations</a>
+                    <a href="#experiences">Experiences</a>
+                    <a href="#offers">Getaway ideas</a>
+                </div>
+
+                <div class="footer-links-column">
+                    <h3>Stayora</h3>
+                    <a href="#about">About us</a>
+                    <a href="#amenities">Amenities</a>
+                    <a href="#testimonials">Traveler notes</a>
+                    <a href="#faq">FAQs</a>
+                </div>
+
+                <div class="footer-newsletter">
+                    <h3>Travel inspiration</h3>
+                    <p>Sign up to try the newsletter interaction in this demo.</p>
+                    <form id="newsletterForm" class="newsletter-form">
+                        <label class="sr-only" for="newsletterEmail">Email address</label>
+                        <input type="email" id="newsletterEmail" placeholder="Your email address" required>
+                        <button type="submit" aria-label="Submit newsletter form"><i
+                                data-lucide="arrow-right"></i></button>
+                    </form>
+                    <p class="newsletter-feedback" id="newsletterFeedback" role="status"></p>
+                    <small>This demo does not send or store email addresses.</small>
+                </div>
+            </div>
+
+            <div class="footer-powered">
+                <a href="https://arslan-weblab.netlify.app/" target="_blank" rel="noopener noreferrer"
+                    class="powered-brand">
+                    <span class="powered-logo-wrap">
+                        <img src="logo.webp" alt="My Codelab logo" loading="lazy">
+                    </span>
+                    <span class="powered-copy"><small>Designed & developed by</small><strong>My Codelab</strong></span>
+                    <i data-lucide="arrow-up-right"></i>
+                </a>
+                <p>Creative frontend experiences built with care.</p>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© <span id="currentYear">2026</span> Stayora. Frontend demonstration project.</p>
+                <div><a href="#faq">Demo information</a><a href="#home">Back to top ↑</a></div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="toast-container" id="toastContainer" aria-live="polite" aria-atomic="true"></div>
+
+    <dialog class="hotel-modal" id="hotelModal">
+        <div id="hotelModalContent"></div>
+        <button class="icon-button modal-close" id="closeHotelModal" aria-label="Close hotel details"><i
+                data-lucide="x"></i></button>
+    </dialog>
+
+    <dialog class="booking-modal" id="bookingModal">
+        <div class="booking-modal-content" id="bookingModalContent"></div>
+        <button class="icon-button modal-close" id="closeBookingModal" aria-label="Close booking dialog"><i
+                data-lucide="x"></i></button>
+    </dialog>
+
+
+
+
+    </main>
+
+    <div class="testimonials-modal" id="testimonialsModal" aria-hidden="true">
+        <div class="testimonials-modal-content" role="dialog" aria-modal="true" aria-labelledby="testimonialsTitle">
+            <button class="testimonials-close" id="closeTestimonials" aria-label="Close testimonials">
+                <i data-lucide="x"></i>
+            </button>
+
+
+            <span class="section-eyebrow">Guest Experiences</span>
+            <h2 id="testimonialsTitle">What Our Guests Say</h2>
+            <p class="testimonials-intro">Discover what guests appreciate about their Stayora experience.</p>
+
+            <div class="testimonials-modal-grid">
+                <article class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p>“The booking process was simple, and the hotel details made choosing a stay much easier.”</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">SA</div>
+                        <div>
+                            <h3>Sarah Ahmed</h3><span>Leisure Traveller</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p>“I loved being able to compare different stays in one place. The experience felt smooth and
+                        convenient.”</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">MK</div>
+                        <div>
+                            <h3>Muhammad Khan</h3><span>Weekend Traveller</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p>“The website is easy to navigate, and saving favourite hotels helps me keep track of my options.”
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">ZA</div>
+                        <div>
+                            <h3>Zoya Ali</h3><span>Family Traveller</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p>“A clean design and helpful information made planning my next trip feel much less stressful.”</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">UH</div>
+                        <div>
+                            <h3>Usman Hassan</h3><span>Business Traveller</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            <p class="testimonials-disclaimer">Sample testimonials for website demonstration.</p>
+        </div>
+
+
+    </div>
+    <div class="story-modal" id="storyModal" aria-hidden="true">
+        <div class="story-modal-content" role="dialog" aria-modal="true" aria-labelledby="storyTitle">
+
+
+            <button class="story-close" id="closeStory" aria-label="Close story">
+                <i data-lucide="x"></i>
+            </button>
+
+            <span class="section-eyebrow">Discover Stayora</span>
+            <h2 id="storyTitle">Our Story</h2>
+
+            <div class="story-modal-body">
+                <div class="story-icon">
+                    <i data-lucide="compass"></i>
+                </div>
+
+                <h3>Making Every Journey Feel Special</h3>
+
+                <p>
+                    Stayora was created around a simple idea: finding the right place to stay
+                    should be an enjoyable part of every journey, not a stressful task.
+                </p>
+
+                <p>
+                    Whether you're planning a relaxing weekend, a family holiday, or a business
+                    trip, Stayora brings accommodation options together in one convenient place.
+                    Explore stays, discover destinations, and save your favourite options while
+                    planning your next adventure.
+                </p>
+
+                <p>
+                    Our goal is to make travel planning feel simpler through a clean experience,
+                    helpful information, and tools that help travellers explore their options
+                    with confidence.
+                </p>
+
+                <div class="story-values">
+                    <div>
+                        <i data-lucide="heart"></i>
+                        <h4>Guest First</h4>
+                        <p>Designed around travellers' needs.</p>
+                    </div>
+
+                    <div>
+                        <i data-lucide="compass"></i>
+                        <h4>Explore More</h4>
+                        <p>Discover places for every kind of trip.</p>
+                    </div>
+
+                    <div>
+                        <i data-lucide="sparkles"></i>
+                        <h4>Simple Planning</h4>
+                        <p>A smoother way to explore your options.</p>
+                    </div>
+                </div>
+
+                <a href="#booking" class="btn btn-primary story-book-btn" id="storyBookingBtn">
+                    Find Your Stay <i data-lucide="arrow-up-right"></i>
+                </a>
+            </div>
+        </div>
+
+    </div>
+    <div class="experiences-modal" id="experiencesModal" aria-hidden="true">
+        <div class="experiences-modal-content" role="dialog" aria-modal="true" aria-labelledby="experiencesTitle">
+
+            <button class="experiences-close" id="closeExperiences" aria-label="Close experiences">
+                <i data-lucide="x"></i>
+            </button>
+
+            <span class="section-eyebrow">Discover Something New</span>
+            <h2 id="experiencesTitle">Explore All Experiences</h2>
+            <p class="experiences-intro">Find inspiration for your next unforgettable journey.</p>
+
+            <div class="experiences-grid">
+                <article class="experience-item">
+                    <div class="experience-icon"><i data-lucide="mountain"></i></div>
+                    <h3>Mountain Escapes</h3>
+                    <p>Discover peaceful retreats, scenic landscapes, and refreshing mountain adventures.</p>
+                </article>
+
+                <article class="experience-item">
+                    <div class="experience-icon"><i data-lucide="waves"></i></div>
+                    <h3>Beach Getaways</h3>
+                    <p>Enjoy relaxing coastal destinations, ocean views, and laid-back holidays.</p>
+                </article>
+
+                <article class="experience-item">
+                    <div class="experience-icon"><i data-lucide="building-2"></i></div>
+                    <h3>City Adventures</h3>
+                    <p>Explore vibrant cities, local culture, shopping, and famous landmarks.</p>
+                </article>
+
+                <article class="experience-item">
+                    <div class="experience-icon"><i data-lucide="heart"></i></div>
+                    <h3>Romantic Retreats</h3>
+                    <p>Find peaceful stays for special occasions and memorable escapes.</p>
+                </article>
+
+                <article class="experience-item">
+                    <div class="experience-icon"><i data-lucide="trees"></i></div>
+                    <h3>Nature & Wildlife</h3>
+                    <p>Reconnect with nature through forests, countryside stays, and outdoor exploration.</p>
+                </article>
+
+                <article class="experience-item">
+                    <div class="experience-icon"><i data-lucide="crown"></i></div>
+                    <h3>Luxury Stays</h3>
+                    <p>Explore elegant accommodation, premium comfort, and sophisticated surroundings.</p>
+                </article>
+            </div>
+
+            <a href="#booking" class="btn btn-primary experiences-book-btn" id="experiencesBookingBtn">
+                Find Your Stay <i data-lucide="arrow-up-right"></i>
+            </a>
+        </div>
+    </div>
+    <div class="destinations-modal" id="destinationsModal" aria-hidden="true">
+        <div class="destinations-modal-content" role="dialog" aria-modal="true" aria-labelledby="destinationsTitle">
+
+            <button class="destinations-close" id="closeDestinations" aria-label="Close destinations">
+                <i data-lucide="x"></i>
+            </button>
+
+            <span class="section-eyebrow">Find Your Next Escape</span>
+            <h2 id="destinationsTitle">Explore Destinations</h2>
+            <p class="destinations-intro">Discover inspiring places for your next adventure.</p>
+
+            <div class="destinations-grid">
+                <article class="destination-item">
+                    <div class="destination-icon"><i data-lucide="landmark"></i></div>
+                    <h3>Paris, France</h3>
+                    <p>Romantic streets, iconic landmarks, and unforgettable city views.</p>
+                </article>
+
+                <article class="destination-item">
+                    <div class="destination-icon"><i data-lucide="waves"></i></div>
+                    <h3>Maldives</h3>
+                    <p>Turquoise waters, peaceful beaches, and tropical escapes.</p>
+                </article>
+
+                <article class="destination-item">
+                    <div class="destination-icon"><i data-lucide="mountain"></i></div>
+                    <h3>Swiss Alps</h3>
+                    <p>Majestic mountains, scenic villages, and fresh alpine air.</p>
+                </article>
+
+                <article class="destination-item">
+                    <div class="destination-icon"><i data-lucide="building-2"></i></div>
+                    <h3>Dubai, UAE</h3>
+                    <p>Modern architecture, luxury experiences, and vibrant city life.</p>
+                </article>
+
+                <article class="destination-item">
+                    <div class="destination-icon"><i data-lucide="trees"></i></div>
+                    <h3>Hunza, Pakistan</h3>
+                    <p>Mountain scenery, beautiful valleys, and rich local culture.</p>
+                </article>
+
+                <article class="destination-item">
+                    <div class="destination-icon"><i data-lucide="compass"></i></div>
+                    <h3>Tokyo, Japan</h3>
+                    <p>A fascinating mix of modern attractions and traditional culture.</p>
+                </article>
+            </div>
+
+            <a href="#booking" class="btn btn-primary destinations-book-btn" id="destinationsBookingBtn">
+                Find Your Stay <i data-lucide="arrow-up-right"></i>
+            </a>
+        </div>
+    </div>
+
+    <div class="all-stays-modal" id="allStaysModal" aria-hidden="true">
+        <div class="all-stays-content" role="dialog" aria-modal="true" aria-labelledby="allStaysTitle">
+
+            <button class="all-stays-close" id="closeAllStays" aria-label="Close stays">
+                <i data-lucide="x"></i>
+            </button>
+
+            <span class="section-eyebrow">Find Your Perfect Stay</span>
+            <h2 id="allStaysTitle">Explore All Stays</h2>
+            <p class="all-stays-intro">Discover accommodation options for your next getaway.</p>
+
+            <div class="all-stays-grid">
+
+                <article class="all-stay-card">
+                    <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=700&q=80"
+                        alt="Luxury resort with swimming pool" loading="lazy">
+                    <div class="all-stay-info">
+                        <span class="stay-category">Luxury Resort</span>
+                        <h3>Azure Paradise Resort</h3>
+                        <p><i data-lucide="map-pin"></i> Maldives</p>
+                        <div class="stay-card-bottom">
+                            <span><strong>$240</strong> / night</span>
+                            <span class="stay-rating"><i data-lucide="star"></i> 4.9</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="all-stay-card">
+                    <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=700&q=80"
+                        alt="Elegant hotel surrounded by greenery" loading="lazy">
+                    <div class="all-stay-info">
+                        <span class="stay-category">Boutique Hotel</span>
+                        <h3>The Grand Retreat</h3>
+                        <p><i data-lucide="map-pin"></i> Bali, Indonesia</p>
+                        <div class="stay-card-bottom">
+                            <span><strong>$175</strong> / night</span>
+                            <span class="stay-rating"><i data-lucide="star"></i> 4.8</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="all-stay-card">
+                    <img src="https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=700&q=80"
+                        alt="Modern accommodation in a city" loading="lazy">
+                    <div class="all-stay-info">
+                        <span class="stay-category">City Hotel</span>
+                        <h3>Urban Heights</h3>
+                        <p><i data-lucide="map-pin"></i> Dubai, UAE</p>
+                        <div class="stay-card-bottom">
+                            <span><strong>$195</strong> / night</span>
+                            <span class="stay-rating"><i data-lucide="star"></i> 4.7</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="all-stay-card">
+                    <img src="https://images.unsplash.com/photo-1518732714860-b62714ce0c59?auto=format&fit=crop&w=700&q=80"
+                        alt="Peaceful mountain lodge" loading="lazy">
+                    <div class="all-stay-info">
+                        <span class="stay-category">Mountain Lodge</span>
+                        <h3>Alpine Haven</h3>
+                        <p><i data-lucide="map-pin"></i> Swiss Alps</p>
+                        <div class="stay-card-bottom">
+                            <span><strong>$160</strong> / night</span>
+                            <span class="stay-rating"><i data-lucide="star"></i> 4.8</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="all-stay-card">
+                    <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=700&q=80"
+                        alt="Resort swimming pool and sun loungers" loading="lazy">
+                    <div class="all-stay-info">
+                        <span class="stay-category">Beach Resort</span>
+                        <h3>Coastal Breeze</h3>
+                        <p><i data-lucide="map-pin"></i> Phuket, Thailand</p>
+                        <div class="stay-card-bottom">
+                            <span><strong>$135</strong> / night</span>
+                            <span class="stay-rating"><i data-lucide="star"></i> 4.6</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="all-stay-card">
+                    <img src="https://images.unsplash.com/photo-1445019980597-93fa8acb246c?auto=format&fit=crop&w=700&q=80"
+                        alt="Comfortable hotel room with scenic views" loading="lazy">
+                    <div class="all-stay-info">
+                        <span class="stay-category">Boutique Stay</span>
+                        <h3>Serene Escape</h3>
+                        <p><i data-lucide="map-pin"></i> Hunza, Pakistan</p>
+                        <div class="stay-card-bottom">
+                            <span><strong>$90</strong> / night</span>
+                            <span class="stay-rating"><i data-lucide="star"></i> 4.8</span>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+
+            <a href="#booking" class="btn btn-primary all-stays-book-btn" id="allStaysBookingBtn">
+                Find Your Stay <i data-lucide="arrow-up-right"></i>
+            </a>
+            <p class="all-stays-note">Sample properties and prices for demonstration purposes.</p>
+        </div>
+    </div>
+    <div class="offers-modal" id="offersModal" aria-hidden="true">
+        <div class="offers-modal-content" role="dialog" aria-modal="true" aria-labelledby="offersTitle">
+
+            <button class="offers-close" id="closeOffers" aria-label="Close offers">
+                <i data-lucide="x"></i>
+            </button>
+
+            <span class="section-eyebrow">Special Deals</span>
+            <h2 id="offersTitle">Exclusive Travel Offers</h2>
+            <p class="offers-intro">Explore sample deals to inspire your next getaway.</p>
+
+            <div class="offers-grid">
+
+                <article class="offer-item">
+                    <div class="offer-icon"><i data-lucide="sun"></i></div>
+                    <span class="offer-tag">Summer Escape</span>
+                    <h3>Make Summer Memorable</h3>
+                    <p>Discover beach resorts and sunny destinations for your next holiday.</p>
+                    <a href="#booking" class="offer-link">Explore stays <i data-lucide="arrow-up-right"></i></a>
+                </article>
+
+                <article class="offer-item">
+                    <div class="offer-icon"><i data-lucide="heart"></i></div>
+                    <span class="offer-tag">Couples Getaway</span>
+                    <h3>Time for Two</h3>
+                    <p>Find romantic retreats and peaceful destinations for a special escape.</p>
+                    <a href="#booking" class="offer-link">Explore stays <i data-lucide="arrow-up-right"></i></a>
+                </article>
+
+                <article class="offer-item">
+                    <div class="offer-icon"><i data-lucide="users"></i></div>
+                    <span class="offer-tag">Family Holiday</span>
+                    <h3>Make Memories Together</h3>
+                    <p>Explore comfortable accommodation for your next family adventure.</p>
+                    <a href="#booking" class="offer-link">Explore stays <i data-lucide="arrow-up-right"></i></a>
+                </article>
+
+                <article class="offer-item">
+                    <div class="offer-icon"><i data-lucide="briefcase-business"></i></div>
+                    <span class="offer-tag">Business Travel</span>
+                    <h3>Travel with Ease</h3>
+                    <p>Discover city hotels suited to work trips and short business stays.</p>
+                    <a href="#booking" class="offer-link">Explore stays <i data-lucide="arrow-up-right"></i></a>
+                </article>
+
+            </div>
+
+            <p class="offers-note">These are promotional examples, not active or guaranteed discounts.</p>
+        </div>
+    </div>
+
+    <div class="all-faqs-modal" id="allFaqsModal" aria-hidden="true">
+        <div class="all-faqs-content" role="dialog" aria-modal="true" aria-labelledby="allFaqsTitle">
+
+            <button class="all-faqs-close" id="closeAllFaqs" aria-label="Close questions">
+                <i data-lucide="x"></i>
+            </button>
+
+            <span class="section-eyebrow">Need Some Help?</span>
+            <h2 id="allFaqsTitle">Frequently Asked Questions</h2>
+            <p class="all-faqs-intro">Find answers to common questions about using Stayora.</p>
+
+            <div class="all-faqs-list">
+
+                <details class="all-faq-item">
+                    <summary>How do I find a hotel on Stayora?</summary>
+                    <p>Use the booking search to explore accommodation options based on your destination, travel dates,
+                        and number of guests.</p>
+                </details>
+
+                <details class="all-faq-item">
+                    <summary>Can I save my favourite stays?</summary>
+                    <p>Yes. Select the heart icon on a hotel card to save it to your favourites and revisit your choices
+                        later.</p>
+                </details>
+
+                <details class="all-faq-item">
+                    <summary>Can I book a stay directly through Stayora?</summary>
+                    <p>This depends on the booking features available on the website. In this demo, the booking
+                        interface is for demonstration and does not confirm real reservations.</p>
+                </details>
+
+                <details class="all-faq-item">
+                    <summary>Are the hotel prices accurate?</summary>
+                    <p>The sample properties and prices on this demo website are illustrative. Confirm actual prices and
+                        availability with the accommodation provider before booking.</p>
+                </details>
+
+                <details class="all-faq-item">
+                    <summary>Can I change my travel dates?</summary>
+                    <p>You can adjust your search dates before exploring stays. For an existing reservation, contact the
+                        provider or booking service you used.</p>
+                </details>
+
+                <details class="all-faq-item">
+                    <summary>Does Stayora offer special discounts?</summary>
+                    <p>The offers section showcases promotional examples. Actual discounts depend on the provider and
+                        any active promotion.</p>
+                </details>
+
+                <details class="all-faq-item">
+                    <summary>How do I choose the right accommodation?</summary>
+                    <p>Compare location, amenities, guest reviews, price, cancellation terms, and the facilities that
+                        matter most to your trip.</p>
+                </details>
+
+                <details class="all-faq-item">
+                    <summary>What if I need help with a booking?</summary>
+                    <p>For a real reservation, contact the hotel or booking provider directly. You can also use the
+                        contact options available on the website.</p>
+                </details>
+
+            </div>
+
+
+        </div>
+    </div>
+
+    <div class="demo-notice">
+        <strong>Demo Project</strong>
+        <span>This website is a frontend demo created for portfolio purposes.</span>
+    </div>
+    <script src="script.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        (function () {
+            function initializeIcons() {
+                if (window.lucide && typeof window.lucide.createIcons === "function") {
+                    window.lucide.createIcons();
+                }
+            }
+
+            if (document.readyState === "loading") {
+                document.addEventListener("DOMContentLoaded", initializeIcons);
+            } else {
+                initializeIcons();
+            }
+
+            window.initializeIcons = initializeIcons;
+        })();
+    </script>
+
+
+</body>
+
+</html>
