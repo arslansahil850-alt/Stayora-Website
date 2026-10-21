@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function hideLoader() {
     if (!loader) return;
 
-    loader.classList.add("is-hidden");
+    loader.classList.add("loader-hidden");
 
     window.setTimeout(() => {
       loader.style.display = "none";
@@ -212,7 +212,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const hotelGrid = $(".hotel-results-grid");
   const hotelSearchInput = $(".filter-search");
   const hotelSort = $("#hotelSort");
-  const hotelCategory = $("#hotelCategory");
+  const hotelCategory = $("#hotelTypeFilter");
   const hotelCount = $("#hotelCount");
   const hotelEmpty = $(".empty-state");
 

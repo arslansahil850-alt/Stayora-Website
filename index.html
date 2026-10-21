@@ -7,7 +7,7 @@
     <meta name="theme-color" content="#173d35">
     <meta name="description"
         content="Discover exceptional stays, explore beautiful hotels, and plan your next getaway with Stayora.">
-    <title>Projects | Arslan Weblab</title>
+    <title>Stayora | Discover Your Next Stay</title>
     <link rel="icon" href="logo.webp">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -793,11 +793,30 @@
                         escape.</p>
                     <div class="footer-socials">
                         <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"
-                            aria-label="Instagram"><i data-lucide="instagram"></i></a>
+                            aria-label="Instagram">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+                                <circle cx="12" cy="12" r="4"></circle>
+                                <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"></circle>
+                            </svg>
+                        </a>
+
                         <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"
-                            aria-label="Facebook"><i data-lucide="facebook"></i></a>
+                            aria-label="Facebook">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="currentColor">
+                                <path
+                                    d="M13.5 21v-8h2.7l.4-3h-3.1V8.1c0-.9.3-1.5 1.6-1.5h1.7V3.9c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3V10H7.3v3h2.8v8z">
+                                </path>
+                            </svg>
+                        </a>
+
                         <a href="https://www.pinterest.com/" target="_blank" rel="noopener noreferrer"
-                            aria-label="Pinterest"><i data-lucide="image"></i></a>
+                            aria-label="Pinterest">
+                            <i data-lucide="image"></i>
+                        </a>
                     </div>
                 </div>
 
@@ -1331,25 +1350,15 @@
         <strong>Demo Project</strong>
         <span>This website is a frontend demo created for portfolio purposes.</span>
     </div>
-    <script src="script.js"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <script>
-        (function () {
-            function initializeIcons() {
-                if (window.lucide && typeof window.lucide.createIcons === "function") {
-                    window.lucide.createIcons();
-                }
+        document.addEventListener("DOMContentLoaded", function () {
+            if (window.lucide && typeof window.lucide.createIcons === "function") {
+                window.lucide.createIcons();
             }
-
-            if (document.readyState === "loading") {
-                document.addEventListener("DOMContentLoaded", initializeIcons);
-            } else {
-                initializeIcons();
-            }
-
-            window.initializeIcons = initializeIcons;
-        })();
+        });
     </script>
+    <script src="script.js"></script>
 
 
 </body>

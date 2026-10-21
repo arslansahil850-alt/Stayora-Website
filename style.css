@@ -4275,3 +4275,961 @@ body {
         font-size: 12px;
     }
 }
+
+/* Final responsive fixes: layout, navigation, tabs, forms and popups */
+
+html,
+body {
+    width: 100%;
+    max-width: 100%;
+}
+
+html {
+    overflow-x: clip;
+}
+
+body {
+    overflow-x: clip;
+}
+
+img,
+video,
+iframe,
+canvas,
+svg {
+    max-width: 100%;
+}
+
+.container {
+    width: min(var(--container, 1240px), calc(100% - 48px));
+}
+
+main,
+section,
+header,
+footer,
+article,
+aside,
+nav,
+.container,
+[class*="grid"],
+[class*="toolbar"],
+[class*="content"] {
+    min-width: 0;
+}
+
+button,
+a,
+input,
+select,
+textarea {
+    max-width: 100%;
+}
+
+button,
+a {
+    overflow-wrap: anywhere;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+small,
+strong,
+label {
+    overflow-wrap: break-word;
+}
+
+.navbar {
+    min-width: 0;
+    gap: 18px;
+}
+
+.nav-links,
+.nav-actions {
+    min-width: 0;
+}
+
+.booking-search {
+    min-width: 0;
+}
+
+.booking-field,
+.field-content {
+    min-width: 0;
+}
+
+.field-content input,
+.field-content select {
+    max-width: 100%;
+}
+
+.hotel-toolbar {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 190px) minmax(0, 190px);
+}
+
+.preview-grid,
+.hotel-results-grid,
+.destination-preview-grid,
+.experience-preview-grid,
+.offers-grid,
+.amenities-preview-grid,
+.testimonial-preview-grid,
+.testimonial-extra-grid,
+.about-story-grid,
+.destination-list-grid,
+.experience-full-grid,
+.amenities-full-grid {
+    min-width: 0;
+}
+
+.hotel-card,
+.destination-card,
+.experience-card,
+.offer-card,
+.amenity-card,
+.testimonial-card,
+.destination-list-card {
+    min-width: 0;
+}
+
+.hotel-price,
+.stay-card-bottom,
+.hotel-meta,
+.section-heading,
+.booking-heading,
+.expanded-heading {
+    min-width: 0;
+    flex-wrap: wrap;
+}
+
+.hotel-details-link {
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+
+/* Tab navigation: wrap instead of forcing the page wider */
+.tabs,
+.tab-list,
+.tab-buttons,
+.tabs-list,
+.tab-navigation,
+[role="tablist"] {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    min-width: 0;
+    max-width: 100%;
+}
+
+.tabs button,
+.tab-list button,
+.tab-buttons button,
+.tabs-list button,
+.tab-navigation button,
+[role="tab"] {
+    min-width: 0;
+    max-width: 100%;
+    white-space: normal;
+    overflow-wrap: anywhere;
+}
+
+.tab-content,
+.tab-panel,
+[role="tabpanel"] {
+    min-width: 0;
+    max-width: 100%;
+    overflow-wrap: break-word;
+}
+
+/* Modals remain inside the viewport and scroll internally */
+.testimonials-modal,
+.story-modal,
+.experiences-modal,
+.destinations-modal,
+.all-stays-modal,
+.offers-modal,
+.all-faqs-modal,
+.hotel-modal,
+.booking-modal,
+.favorites-modal {
+    box-sizing: border-box;
+    padding: clamp(10px, 3vw, 24px);
+}
+
+.testimonials-modal-content,
+.story-modal-content,
+.experiences-modal-content,
+.destinations-modal-content,
+.all-stays-content,
+.offers-modal-content,
+.all-faqs-content,
+.hotel-modal-content,
+.booking-modal-content,
+.favorites-panel {
+    box-sizing: border-box;
+    width: min(100%, 900px);
+    max-width: 100%;
+    max-height: calc(100dvh - 24px);
+    overflow-x: clip;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+}
+
+.testimonials-modal-content *,
+.story-modal-content *,
+.experiences-modal-content *,
+.destinations-modal-content *,
+.all-stays-content *,
+.offers-modal-content *,
+.all-faqs-content *,
+.hotel-modal-content *,
+.booking-modal-content *,
+.favorites-panel * {
+    min-width: 0;
+}
+
+.testimonials-modal-content img,
+.story-modal-content img,
+.experiences-modal-content img,
+.destinations-modal-content img,
+.all-stays-content img,
+.offers-modal-content img,
+.all-faqs-content img {
+    max-width: 100%;
+}
+
+@media (max-width: 1050px) {
+    .booking-search {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        overflow: visible;
+        border: 0;
+        gap: 10px;
+    }
+
+    .booking-field {
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        background: var(--surface);
+    }
+
+    .booking-submit {
+        min-height: 58px;
+        grid-column: 1 / -1;
+        border-radius: 10px;
+    }
+
+    .hotel-toolbar {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    }
+
+    .filter-search {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (max-width: 800px) {
+    .container {
+        width: min(var(--container, 1240px), calc(100% - 36px));
+    }
+
+    .navbar {
+        min-height: 72px;
+        flex-wrap: wrap;
+    }
+
+    .nav-links {
+        gap: 16px;
+    }
+
+    .nav-actions {
+        gap: 8px;
+    }
+
+    .nav-book-btn {
+        padding-inline: 12px;
+    }
+
+    .hero-copy h1 {
+        font-size: clamp(42px, 8vw, 64px);
+        letter-spacing: -1.8px;
+    }
+
+    .section-heading {
+        align-items: flex-start;
+    }
+
+    .preview-grid,
+    .hotel-results-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .about-section {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .about-image-note {
+        max-width: calc(100% - 24px);
+    }
+
+    .faq-section {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .offer-banner {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .footer-main {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .container {
+        width: calc(100% - 32px);
+    }
+
+    .section-block,
+    #featured,
+    .destinations-section,
+    .offers-section,
+    .testimonials-section {
+        padding-top: 62px;
+    }
+
+    .announcement-bar {
+        padding: 8px 14px;
+        flex-wrap: wrap;
+        gap: 5px 10px;
+    }
+
+    .announcement-bar p,
+    .announcement-bar a {
+        font-size: 10px;
+    }
+
+    .navbar {
+        gap: 10px;
+    }
+
+    .brand {
+        font-size: 23px;
+    }
+
+    .nav-links {
+        gap: 12px;
+    }
+
+    .nav-actions {
+        gap: 7px;
+    }
+
+    .nav-book-btn {
+        min-height: 39px;
+        padding: 9px 10px;
+        font-size: 10px;
+    }
+
+    .mobile-menu-toggle {
+        flex-shrink: 0;
+    }
+
+    .hero-section {
+        min-height: 560px;
+    }
+
+    .hero-content {
+        padding-top: 55px;
+        padding-bottom: 55px;
+    }
+
+    .hero-copy h1 {
+        font-size: clamp(38px, 10vw, 54px);
+        letter-spacing: -1.2px;
+    }
+
+    .hero-copy>p {
+        font-size: 14px;
+        line-height: 1.75;
+    }
+
+    .hero-actions {
+        align-items: stretch;
+        gap: 12px;
+    }
+
+    .hero-actions .btn {
+        max-width: 100%;
+    }
+
+    .hero-side-note {
+        display: none;
+    }
+
+    .hero-bottom {
+        gap: 12px;
+    }
+
+    .hero-bottom span {
+        font-size: 8px;
+        letter-spacing: 1px;
+    }
+
+    .booking-section {
+        margin-top: 35px;
+        padding: 20px 16px;
+        border-radius: 18px;
+    }
+
+    .booking-heading {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .booking-heading h2 {
+        font-size: 25px;
+    }
+
+    .booking-search {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 9px;
+    }
+
+    .booking-field {
+        min-height: 68px;
+        padding: 12px;
+    }
+
+    .booking-submit {
+        grid-column: auto;
+        min-height: 52px;
+    }
+
+    .section-heading {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 16px;
+        margin-bottom: 24px;
+    }
+
+    .section-heading h2 {
+        font-size: clamp(29px, 8vw, 38px);
+        letter-spacing: -0.8px;
+    }
+
+    .section-heading>.btn {
+        align-self: flex-start;
+    }
+
+    .preview-grid,
+    .hotel-results-grid,
+    .destination-preview-grid,
+    .experience-preview-grid,
+    .offers-grid,
+    .testimonial-preview-grid,
+    .testimonial-extra-grid,
+    .experience-full-grid,
+    .amenities-full-grid,
+    .destination-list-grid,
+    .about-story-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .destination-card:last-child,
+    .experience-card:last-child,
+    .offer-card:last-child,
+    .testimonial-card:last-child {
+        display: initial;
+        grid-column: auto;
+    }
+
+    .hotel-image-wrap,
+    .hotel-results-grid .hotel-image-wrap {
+        height: 220px;
+    }
+
+    .hotel-card-content {
+        padding: 18px;
+    }
+
+    .hotel-toolbar {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .filter-search {
+        grid-column: auto;
+    }
+
+    .expandable-section {
+        padding: 20px 15px;
+        border-radius: 16px;
+    }
+
+    .expanded-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .expanded-heading h3 {
+        font-size: 24px;
+    }
+
+    .destination-card {
+        height: 300px;
+    }
+
+    .destination-list-card {
+        gap: 11px;
+        padding: 10px;
+    }
+
+    .destination-list-card>img {
+        width: 70px;
+        height: 70px;
+    }
+
+    .destination-list-card strong {
+        font-size: 17px;
+    }
+
+    .experience-card,
+    .offer-card,
+    .testimonial-card,
+    .amenity-card {
+        padding: 21px 18px;
+    }
+
+    .offer-content {
+        padding: 28px 20px;
+    }
+
+    .about-image>img {
+        height: 300px;
+        border-radius: 20px;
+    }
+
+    .about-image-note {
+        right: 8px;
+        bottom: 12px;
+        padding: 12px;
+        gap: 8px;
+        font-size: 10px;
+    }
+
+    .about-content h2,
+    .faq-intro h2 {
+        font-size: clamp(29px, 8vw, 36px);
+    }
+
+    .faq-item summary {
+        padding: 15px;
+        gap: 10px;
+        font-size: 12px;
+    }
+
+    .faq-item>p {
+        padding: 0 15px 15px;
+    }
+
+    .final-cta-section {
+        padding: 45px 18px;
+        border-radius: 22px;
+    }
+
+    .final-cta-content h2 {
+        font-size: clamp(29px, 8vw, 38px);
+    }
+
+    .footer-main {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 28px;
+    }
+
+    .footer-brand-column,
+    .footer-newsletter {
+        grid-column: auto;
+    }
+
+    .footer-bottom {
+        gap: 10px;
+    }
+
+    .testimonials-modal,
+    .story-modal,
+    .experiences-modal,
+    .destinations-modal,
+    .all-stays-modal,
+    .offers-modal,
+    .all-faqs-modal,
+    .hotel-modal,
+    .booking-modal,
+    .favorites-modal {
+        padding: 10px;
+    }
+
+    .testimonials-modal-content,
+    .story-modal-content,
+    .experiences-modal-content,
+    .destinations-modal-content,
+    .all-stays-content,
+    .offers-modal-content,
+    .all-faqs-content,
+    .hotel-modal-content,
+    .booking-modal-content,
+    .favorites-panel {
+        width: 100%;
+        max-height: calc(100dvh - 20px);
+        padding: 58px 16px 20px;
+        border-radius: 16px;
+    }
+
+    .testimonials-modal-content h2,
+    .story-modal-content h2,
+    .experiences-modal-content h2,
+    .destinations-modal-content h2,
+    .all-stays-content h2,
+    .offers-modal-content h2,
+    .all-faqs-content h2 {
+        font-size: clamp(23px, 7vw, 30px);
+        overflow-wrap: anywhere;
+    }
+
+    .all-stays-grid,
+    .offers-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .all-stay-card>img {
+        height: 190px;
+    }
+
+    .all-faq-item summary {
+        padding: 15px 42px 15px 14px;
+        font-size: 13px;
+    }
+
+    .all-faq-item summary::after {
+        right: 14px;
+    }
+
+    .all-faq-item>p {
+        padding: 0 14px 15px;
+        font-size: 13px;
+    }
+
+    .demo-notice {
+        padding-inline: 12px;
+    }
+}
+
+@media (max-width: 380px) {
+    .container {
+        width: calc(100% - 24px);
+    }
+
+    .brand {
+        font-size: 21px;
+        gap: 6px;
+    }
+
+    .brand-icon {
+        width: 31px;
+        height: 31px;
+    }
+
+    .nav-actions {
+        gap: 5px;
+    }
+
+    .nav-book-btn {
+        padding-inline: 8px;
+        font-size: 9px;
+    }
+
+    .hero-copy h1 {
+        font-size: 37px;
+    }
+
+    .btn {
+        padding: 11px 14px;
+        gap: 7px;
+        font-size: 12px;
+    }
+
+    .booking-section {
+        padding: 17px 12px;
+    }
+
+    .hotel-price>strong {
+        font-size: 19px;
+    }
+
+    .destination-overlay {
+        right: 16px;
+        left: 16px;
+    }
+
+    .destination-overlay>strong {
+        font-size: 27px;
+    }
+
+    .offer-content h2 {
+        font-size: 29px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+
+/* Stayora responsive safety fixes */
+html {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: clip;
+}
+
+body {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    overflow-x: clip;
+}
+
+main,
+section,
+header,
+footer,
+.container {
+    min-width: 0;
+    max-width: 100%;
+}
+
+.container {
+    width: min(var(--container), calc(100% - 48px));
+}
+
+img,
+video,
+iframe,
+svg {
+    max-width: 100%;
+}
+
+button,
+a,
+input,
+select,
+textarea {
+    overflow-wrap: anywhere;
+}
+
+.booking-search,
+.booking-field,
+.field-content,
+.hotel-toolbar,
+.filter-search,
+.section-heading,
+.footer-main,
+.footer-bottom {
+    min-width: 0;
+}
+
+.booking-field input,
+.booking-field select,
+.filter-search input,
+.hotel-toolbar select {
+    width: 100%;
+    min-width: 0;
+}
+
+.preview-grid,
+.hotel-results-grid,
+.destination-preview-grid,
+.experience-preview-grid,
+.offers-grid,
+.testimonial-preview-grid,
+.testimonial-extra-grid,
+.experience-full-grid,
+.amenities-full-grid,
+.destination-list-grid,
+.about-story-grid,
+.all-stays-grid {
+    min-width: 0;
+}
+
+@media (max-width: 900px) {
+    .container {
+        width: calc(100% - 36px);
+    }
+
+    .navbar {
+        gap: 12px;
+    }
+
+    .nav-links {
+        min-width: 0;
+    }
+
+    .booking-search {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .booking-submit {
+        width: 100%;
+    }
+
+    .hero-side-note {
+        display: none;
+    }
+
+    .section-heading {
+        gap: 18px;
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 600px) {
+    .container {
+        width: calc(100% - 28px);
+    }
+
+    .announcement-bar {
+        padding-inline: 12px;
+        flex-wrap: wrap;
+        gap: 4px 10px;
+    }
+
+    .navbar {
+        min-height: 68px;
+        gap: 8px;
+    }
+
+    .brand {
+        min-width: 0;
+    }
+
+    .nav-actions {
+        gap: 7px;
+    }
+
+    .nav-book-btn {
+        max-width: 116px;
+        white-space: normal;
+        line-height: 1.2;
+        padding: 9px 10px;
+    }
+
+    .booking-section {
+        width: calc(100% - 28px);
+        margin-inline: auto;
+    }
+
+    .booking-heading {
+        align-items: flex-start;
+        gap: 10px;
+        flex-direction: column;
+    }
+
+    .booking-search {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .booking-field {
+        width: 100%;
+    }
+
+    .hero-section {
+        min-height: 590px;
+    }
+
+    .hero-content {
+        padding-top: 60px;
+        padding-bottom: 55px;
+    }
+
+    .hero-copy {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+    }
+
+    .hero-copy h1 {
+        font-size: clamp(36px, 10vw, 52px);
+        letter-spacing: -1.5px;
+        overflow-wrap: anywhere;
+    }
+
+    .hero-copy > p {
+        font-size: 14px;
+    }
+
+    .hero-actions {
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .hero-social-proof {
+        margin-top: 32px;
+    }
+
+    .hero-bottom {
+        gap: 12px;
+    }
+
+    .hero-bottom span {
+        font-size: 8px;
+        letter-spacing: 1px;
+    }
+
+    .section-heading > .btn {
+        max-width: 100%;
+        white-space: normal;
+    }
+
+    .hotel-toolbar {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .hotel-toolbar > * {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .footer-socials {
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 380px) {
+    .container {
+        width: calc(100% - 24px);
+    }
+
+    .nav-book-btn {
+        max-width: 92px;
+        font-size: 10px;
+    }
+
+    .icon-button,
+    .mobile-menu-toggle {
+        flex-shrink: 0;
+    }
+
+    .hero-copy h1 {
+        font-size: clamp(33px, 9.5vw, 38px);
+    }
+}
